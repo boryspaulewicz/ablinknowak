@@ -14,7 +14,7 @@ TASK.NAME <<- 'ablinknowak'
 
 FIXATION.TIME = 1000
 POST.FIXATION.TIME = 1000
-PRESENTATION.TIME = 120
+PRESENTATION.TIME = 500 ## 120
 MAX.REACTION.TIME = 3000
 ISI = 16
 NOF.ITEMS = 15
@@ -53,8 +53,10 @@ pictures = list(black = black, green = green, red = red, spiders = spiders, viol
 
 FX = fixation(WINDOW, size = .02)
 
-trial.code = function(trial, t1type = sample(c('black', 'violence', 'spider'), 1), t1pos = sample(c(4, 7), 1),
+trial.code = function(trial, t1type = sample(c('black', 'violence', 'spiders'), 1), t1pos = sample(c(4, 7), 1),
     t2type = sample(c('red', 'green'), 1), t2lag = sample(c(2, 5), 1), feedback = 0){
+    t1type = as.character(t1type)
+    t2type = as.character(t2type)
     ## Kod specyficzny dla zadania
     ## ...
     ## Szablon
