@@ -18,6 +18,7 @@ PRESENTATION.TIME = 120
 MAX.REACTION.TIME = 3000
 ISI = 16
 NOF.ITEMS = 15
+BLOCK.LENGTH = 48
 KEYS <<- c(Key.Left, Key.Right)
 
 ## WINDOW$set.visible(T)
@@ -71,6 +72,8 @@ trial.code = function(trial, t1type = sample(c('black', 'violence', 'spiders'), 
     indices = list(black = black.i, green = green.i, red = red.i, spiders = spiders.i, violence = violence.i)
     if(trial == 1){
         state = 'press-space'
+    }else if((trial %% BLOCK.LENGTH) == 0){
+        state = 'break'
     }else{ state = 'show-fixation' }
     if(WINDOW$is.open())process.inputs()
     start = CLOCK$time
@@ -84,6 +87,14 @@ trial.code = function(trial, t1type = sample(c('black', 'violence', 'spiders'), 
             center.win(TXT)
             WINDOW$clear(c(0, 0, 0))
             WINDOW$draw(TXT)
+            WINDOW$display()
+            if(KEY.RELEASED[Key.Space + 1] > start){
+                state = 'show-fixation'
+            }
+        }, 'break' = {
+            WINDOW$clear(c(.5, .5, .5))
+            TXT$set.string("Krótka przerwa - odpocznij. Aby kontynuować, naciśnij spację")
+            WINDOW$draw(center.win(TXT))
             WINDOW$display()
             if(KEY.RELEASED[Key.Space + 1] > start){
                 state = 'show-fixation'
@@ -186,9 +197,18 @@ gui.show.instruction("Teraz rozpocznie się zadanie wykrywania słów innego kol
 
 Zadanie to polega na zaznaczeniu, za pomocą klawiszy strzałek, czy pojawiła się ramka czerwona, czy zielona. Jeżeli pojawiła się ramka CZERWONA, należy nacisnąć klawisz STRZAŁKA W LEWO, a jeżeli ZIELONA, to klawisz STRZAŁKA W PRAWO.
 
-Należy reagować możliwie szybko i poprawnie.")
+Najpierw rozpocznie się sesja treningowa, składająca się z 10 prób. Celem tej sesji będzie zapoznanie się z działaniem zadania.
 
-run.trials(trial.code, record.session = F, expand.grid(t1type = c('black', 'violence', 'spiders'), t1pos = c(4, 7),
-                                                       t2type = c('red', 'green'), t2lag = c(2, 5)), condition = 'default')
+Należy reagować możliwie poprawnie.")
+
+run.trials(trial.code, record.session = F, condition = 'default',
+           expand.grid(t1type = c('black'), t1pos = c(4, 7),
+                       t2type = c('red', 'green'), t2lag = c(2, 5)),
+           nof.trials = 10)
+
+run.trials(trial.code, record.session = T, condition = 'default',
+           expand.grid(t1type = c('black', 'violence', 'spiders'), t1pos = c(4, 7),
+                       t2type = c('red', 'green'), t2lag = c(2, 5)),
+           b = 9) ## 24 warunki
 
 if(!interactive())quit("no")
