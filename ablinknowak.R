@@ -211,4 +211,6 @@ run.trials(trial.code, record.session = T, condition = 'default',
                        t2type = c('red', 'green'), t2lag = c(2, 5)),
            b = 9) ## 24 warunki
 
+gui.show.instruction("Dziękujemy za udział w badaniu. Proszę poczekać na swoim miejscu, aż osoba prowadząca badanie podejdzie i poinformuje o dalszym postępowaniu.")
+
 if(!interactive())quit("no")
