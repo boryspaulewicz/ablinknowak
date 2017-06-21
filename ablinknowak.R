@@ -208,8 +208,8 @@ run.trials(trial.code, record.session = F, condition = 'default',
 
 run.trials(trial.code, record.session = T, condition = 'default',
            expand.grid(t1type = c('black', 'violence', 'spiders'), t1pos = c(4, 7),
-                       t2type = c('red', 'green'), t2lag = c(2, 5)),
-           b = 9) ## 24 warunki
+                       t2type = c('red', 'green'), t2lag = c(2, 5, 8)),
+           b = 7) ## 36 warunków
 
 gui.show.instruction("Dziękujemy za udział w badaniu. Proszę poczekać na swoim miejscu, aż osoba prowadząca badanie podejdzie i poinformuje o dalszym postępowaniu.")
 

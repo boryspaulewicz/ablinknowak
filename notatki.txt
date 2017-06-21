@@ -1,0 +1,19 @@
+Ewa JóŸwiakowska to kwiaty i inne
+
+Katarzyna Nowak to paj¹ki i inne:
+
+T1 ma byæ na pozycji 4 lub 7, losowo, lag 2 i 5, ma byæ trochê
+obrazków przed T1 i po T2. Dystraktorami maj¹ byæ domy w czarnych
+ramkach, które równie¿ s¹ jednym z typów T1.
+
+£¹cznie 15 obrazków w próbie
+
+Prezentacja bodŸca 120 ms
+
+TODO:
+
+Wszystkie bodŸce s¹ czarno-bia³e
+
+Wyœwietlanie pomniejszonych (mo¿e 1/3 szerokoœci ekranu)
+
+Decyzja podawana na skali wskaŸnikiem myszki - na pustym ekranie
