@@ -193,7 +193,7 @@ Pseudonim składa się z inicjałów (małymi literami) oraz czterech cyfr:
 dnia i miesiąca urodzenia (np.  ms0706).")
 gui.user.data()
 
-gui.show.instruction("Teraz rozpocznie się zadanie wykrywania słów innego koloru. Zadanie to składa się z serii prób, w trakcie których na ekranie komputera prezentowane są szybko, jedno po drugim, różne obrazy. W pewnym momencie prezentowane są obrazy otoczone ramką w kolorze zielonym lub czerwonym.
+gui.show.instruction("Teraz rozpocznie się zadanie wykrywania ramek innego koloru. Zadanie to składa się z serii prób, w trakcie których na ekranie komputera prezentowane są szybko, jedno po drugim, różne obrazy. W pewnym momencie prezentowane są obrazy otoczone ramką w kolorze zielonym lub czerwonym.
 
 Zadanie to polega na zaznaczeniu, za pomocą klawiszy strzałek, czy pojawiła się ramka czerwona, czy zielona. Jeżeli pojawiła się ramka CZERWONA, należy nacisnąć klawisz STRZAŁKA W LEWO, a jeżeli ZIELONA, to klawisz STRZAŁKA W PRAWO.
 
